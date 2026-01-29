@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ProductGrid } from '../components/ProductGrid';
 import { Button } from '../components/Button';
+import { useCart } from '../hooks/useCart';
 import { products, heroContent, featuredCategories } from '../data/products';
 
-export function Home({ onAddToCart }) {
-  const [cartCount, setCartCount] = useState(0);
+export function Home() {
+  const navigate = useNavigate();
+  const { addToCart } = useCart();
 
-  const handleAddToCart = (productId) => {
-    setCartCount(cartCount + 1);
-    onAddToCart(productId);
+  const handleAddToCart = (product) => {
+    addToCart(product);
   };
 
   // Get featured products (first 6)
@@ -63,7 +64,7 @@ export function Home({ onAddToCart }) {
         <h2 className="text-3xl font-bold text-black mb-12">Featured Products</h2>
         <ProductGrid products={featuredProducts} onAddToCart={handleAddToCart} />
         <div className="flex justify-center mt-12">
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" onClick={() => navigate('/products')}>
             View All Products
           </Button>
         </div>

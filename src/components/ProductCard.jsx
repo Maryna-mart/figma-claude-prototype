@@ -2,12 +2,12 @@ import { Badge } from './Badge';
 import { Button } from './Button';
 
 export function ProductCard({ product, onAddToCart }) {
-  const { id, name, price, originalPrice, image, badge, availability } = product;
+  const { name, price, originalPrice, image, badge, availability } = product;
 
   const hasDiscount = originalPrice && originalPrice > price;
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden border border-light-gray hover:shadow-md transition-shadow duration-200">
+    <div className="bg-white rounded-lg overflow-hidden border border-light-gray hover:shadow-md transition-shadow duration-200" data-testid="product-card">
       {/* Image Container */}
       <div className="relative bg-off-white aspect-square overflow-hidden">
         <img
@@ -31,7 +31,7 @@ export function ProductCard({ product, onAddToCart }) {
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="text-sm font-semibold text-black mb-2 line-clamp-2">
+        <h3 className="text-sm font-semibold text-black mb-2 line-clamp-2" data-testid="product-name">
           {name}
         </h3>
 
@@ -60,7 +60,8 @@ export function ProductCard({ product, onAddToCart }) {
           variant={availability ? 'primary' : 'secondary'}
           size="sm"
           disabled={!availability}
-          onClick={() => onAddToCart(id)}
+          onClick={() => onAddToCart(product)}
+          data-testid="add-to-cart-btn"
         >
           Add to Cart
         </Button>

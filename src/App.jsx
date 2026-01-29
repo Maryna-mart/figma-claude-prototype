@@ -1,16 +1,17 @@
-import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
 import { Home } from './pages/Home';
+import { Products } from './pages/Products';
 
 export default function App() {
-  const [cart, setCart] = useState([]);
-
-  const handleAddToCart = (productId) => {
-    setCart([...cart, productId]);
-  };
-
   return (
-    <div>
-      <Home onAddToCart={handleAddToCart} />
-    </div>
+    <Router>
+      <CartProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products" element={<Products />} />
+        </Routes>
+      </CartProvider>
+    </Router>
   );
 }

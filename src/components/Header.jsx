@@ -1,10 +1,15 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Input } from './Input';
 import { Button } from './Button';
+import { useCart } from '../hooks/useCart';
+import { CartModal } from './CartModal';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const { cartCount } = useCart();
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-light-gray">
@@ -12,9 +17,9 @@ export function Header() {
         {/* Top Bar */}
         <div className="flex items-center justify-between px-4 py-4 md:px-6">
           {/* Logo */}
-          <div className="text-2xl font-bold text-black">
+          <Link to="/" className="text-2xl font-bold text-black hover:text-dark-charcoal transition-colors">
             CLOTH
-          </div>
+          </Link>
 
           {/* Search Bar - Hidden on Mobile */}
           <div className="hidden md:flex flex-1 mx-8">
@@ -27,8 +32,20 @@ export function Header() {
 
           {/* Icons - Cart and Menu */}
           <div className="flex items-center gap-4">
-            <button className="text-black text-2xl hover:text-dark-charcoal transition-colors">
+            <button
+              onClick={() => setIsCartOpen(!isCartOpen)}
+              className="text-black text-2xl hover:text-dark-charcoal transition-colors relative"
+              data-testid="cart-icon"
+            >
               🛒
+              {cartCount > 0 && (
+                <span
+                  className="absolute -top-2 -right-2 bg-accent text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-semibold"
+                  data-testid="cart-count"
+                >
+                  {cartCount}
+                </span>
+              )}
             </button>
             <button
               className="md:hidden text-2xl text-black hover:text-dark-charcoal transition-colors"
@@ -42,15 +59,15 @@ export function Header() {
         {/* Navigation - Visible on Desktop */}
         <nav className="hidden md:block px-4 md:px-6 py-3 border-t border-light-gray">
           <div className="flex gap-8">
-            <a href="#" className="text-sm font-semibold text-black hover:text-dark-charcoal transition-colors">
+            <Link to="/products?category=men" className="text-sm font-semibold text-black hover:text-dark-charcoal transition-colors">
               MEN
-            </a>
-            <a href="#" className="text-sm font-semibold text-black hover:text-dark-charcoal transition-colors">
+            </Link>
+            <Link to="/products?category=women" className="text-sm font-semibold text-black hover:text-dark-charcoal transition-colors">
               WOMEN
-            </a>
-            <a href="#" className="text-sm font-semibold text-black hover:text-dark-charcoal transition-colors">
+            </Link>
+            <Link to="/products?category=kids" className="text-sm font-semibold text-black hover:text-dark-charcoal transition-colors">
               KIDS
-            </a>
+            </Link>
             <a href="#" className="text-sm font-semibold text-black hover:text-dark-charcoal transition-colors">
               SALE
             </a>
@@ -60,15 +77,15 @@ export function Header() {
         {/* Mobile Menu */}
         {isMenuOpen && (
           <nav className="md:hidden border-t border-light-gray px-4 py-4 space-y-4">
-            <a href="#" className="block text-sm font-semibold text-black hover:text-dark-charcoal">
+            <Link to="/products?category=men" className="block text-sm font-semibold text-black hover:text-dark-charcoal">
               MEN
-            </a>
-            <a href="#" className="block text-sm font-semibold text-black hover:text-dark-charcoal">
+            </Link>
+            <Link to="/products?category=women" className="block text-sm font-semibold text-black hover:text-dark-charcoal">
               WOMEN
-            </a>
-            <a href="#" className="block text-sm font-semibold text-black hover:text-dark-charcoal">
+            </Link>
+            <Link to="/products?category=kids" className="block text-sm font-semibold text-black hover:text-dark-charcoal">
               KIDS
-            </a>
+            </Link>
             <a href="#" className="block text-sm font-semibold text-black hover:text-dark-charcoal">
               SALE
             </a>
@@ -77,6 +94,9 @@ export function Header() {
             </div>
           </nav>
         )}
+
+        {/* Cart Modal */}
+        {isCartOpen && <CartModal onClose={() => setIsCartOpen(false)} />}
       </div>
     </header>
   );

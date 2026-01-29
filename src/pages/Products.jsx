@@ -5,9 +5,11 @@ import { ProductGrid } from '../components/ProductGrid';
 import { FilterSidebar } from '../components/FilterSidebar';
 import { Breadcrumb } from '../components/Breadcrumb';
 import { Button } from '../components/Button';
+import { useCart } from '../hooks/useCart';
 import { products } from '../data/products';
 
-export function Products({ onAddToCart }) {
+export function Products() {
+  const { addToCart } = useCart();
   const [filters, setFilters] = useState({
     sizes: [],
     availability: [],
@@ -105,7 +107,7 @@ export function Products({ onAddToCart }) {
               <>
                 <ProductGrid
                   products={filteredAndSortedProducts}
-                  onAddToCart={onAddToCart}
+                  onAddToCart={addToCart}
                 />
 
                 {/* Pagination */}

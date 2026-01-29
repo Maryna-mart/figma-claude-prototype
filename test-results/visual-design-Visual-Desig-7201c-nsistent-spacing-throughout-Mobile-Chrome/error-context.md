@@ -1,0 +1,158 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e4]:
+  - banner [ref=e5]:
+    - generic [ref=e7]:
+      - generic [ref=e8]: CLOTH
+      - generic [ref=e9]:
+        - button "🛒" [ref=e10] [cursor=pointer]
+        - button "☰" [ref=e11] [cursor=pointer]
+  - generic [ref=e14]:
+    - heading "Summer Collection 2026" [level=1] [ref=e15]
+    - paragraph [ref=e16]: Discover the latest trends in fashion
+    - button "Shop Now" [ref=e17] [cursor=pointer]
+  - generic [ref=e18]:
+    - heading "Shop by Category" [level=2] [ref=e19]
+    - generic [ref=e20]:
+      - link "MEN MEN" [ref=e21] [cursor=pointer]:
+        - /url: /products?category=men
+        - img "MEN" [ref=e22]
+        - heading "MEN" [level=3] [ref=e24]
+      - link "WOMEN WOMEN" [ref=e25] [cursor=pointer]:
+        - /url: /products?category=women
+        - img "WOMEN" [ref=e26]
+        - heading "WOMEN" [level=3] [ref=e28]
+      - link "KIDS KIDS" [ref=e29] [cursor=pointer]:
+        - /url: /products?category=kids
+        - img "KIDS" [ref=e30]
+        - heading "KIDS" [level=3] [ref=e32]
+  - generic [ref=e33]:
+    - heading "Featured Products" [level=2] [ref=e34]
+    - generic [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]:
+          - img "Classic Black T-Shirt" [ref=e38]
+          - generic [ref=e40]: NEW
+          - generic [ref=e41]: "-25%"
+        - generic [ref=e42]:
+          - heading "Classic Black T-Shirt" [level=3] [ref=e43]
+          - generic [ref=e44]:
+            - generic [ref=e45]: $29.99
+            - generic [ref=e46]: $39.99
+          - generic [ref=e47]: In Stock
+          - button "Add to Cart" [ref=e48] [cursor=pointer]
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - img "Premium Denim Jeans" [ref=e51]
+          - generic [ref=e53]: SALE
+          - generic [ref=e54]: "-20%"
+        - generic [ref=e55]:
+          - heading "Premium Denim Jeans" [level=3] [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]: $79.99
+            - generic [ref=e59]: $99.99
+          - generic [ref=e60]: In Stock
+          - button "Add to Cart" [ref=e61] [cursor=pointer]
+      - generic [ref=e62]:
+        - img "White Casual Sneakers" [ref=e64]
+        - generic [ref=e65]:
+          - heading "White Casual Sneakers" [level=3] [ref=e66]
+          - generic [ref=e68]: $89.99
+          - generic [ref=e69]: In Stock
+          - button "Add to Cart" [ref=e70] [cursor=pointer]
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - img "Navy Polo Shirt" [ref=e73]
+          - generic [ref=e74]: "-17%"
+        - generic [ref=e75]:
+          - heading "Navy Polo Shirt" [level=3] [ref=e76]
+          - generic [ref=e77]:
+            - generic [ref=e78]: $49.99
+            - generic [ref=e79]: $59.99
+          - generic [ref=e80]: Out of Stock
+          - button "Add to Cart" [disabled] [ref=e81] [cursor=pointer]
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - img "Summer Floral Dress" [ref=e84]
+          - generic [ref=e86]: NEW
+          - generic [ref=e87]: "-25%"
+        - generic [ref=e88]:
+          - heading "Summer Floral Dress" [level=3] [ref=e89]
+          - generic [ref=e90]:
+            - generic [ref=e91]: $59.99
+            - generic [ref=e92]: $79.99
+          - generic [ref=e93]: In Stock
+          - button "Add to Cart" [ref=e94] [cursor=pointer]
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - img "Black Blazer" [ref=e97]
+          - generic [ref=e99]: SALE
+          - generic [ref=e100]: "-23%"
+        - generic [ref=e101]:
+          - heading "Black Blazer" [level=3] [ref=e102]
+          - generic [ref=e103]:
+            - generic [ref=e104]: $99.99
+            - generic [ref=e105]: $129.99
+          - generic [ref=e106]: In Stock
+          - button "Add to Cart" [ref=e107] [cursor=pointer]
+    - button "View All Products" [ref=e109] [cursor=pointer]
+  - generic [ref=e111]:
+    - heading "Subscribe to Our Newsletter" [level=2] [ref=e112]
+    - paragraph [ref=e113]: Get the latest updates on new products and sales
+    - generic [ref=e114]:
+      - textbox "Enter your email" [ref=e115]
+      - button "Subscribe" [ref=e116] [cursor=pointer]
+  - contentinfo [ref=e117]:
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - generic [ref=e120]:
+          - heading "CLOTH" [level=3] [ref=e121]
+          - paragraph [ref=e122]: Premium fashion store for men, women, and kids.
+        - generic [ref=e123]:
+          - heading "Shop" [level=4] [ref=e124]
+          - list [ref=e125]:
+            - listitem [ref=e126]:
+              - link "Men" [ref=e127] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e128]:
+              - link "Women" [ref=e129] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e130]:
+              - link "Kids" [ref=e131] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e132]:
+              - link "Sale" [ref=e133] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e134]:
+          - heading "Support" [level=4] [ref=e135]
+          - list [ref=e136]:
+            - listitem [ref=e137]:
+              - link "Contact Us" [ref=e138] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e139]:
+              - link "Shipping Info" [ref=e140] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e141]:
+              - link "Returns" [ref=e142] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e143]:
+              - link "FAQ" [ref=e144] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e145]:
+          - heading "Legal" [level=4] [ref=e146]
+          - list [ref=e147]:
+            - listitem [ref=e148]:
+              - link "Privacy" [ref=e149] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e150]:
+              - link "Terms" [ref=e151] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e152]:
+              - link "Cookies" [ref=e153] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e154]:
+              - link "Sitemap" [ref=e155] [cursor=pointer]:
+                - /url: "#"
+      - paragraph [ref=e157]: © 2026 CLOTH Store. All rights reserved.
+```
