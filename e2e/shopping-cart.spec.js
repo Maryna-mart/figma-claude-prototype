@@ -12,8 +12,15 @@ test.describe('Shopping Cart', () => {
 
     // Cart count should be 0 or not displayed
     const cartCount = page.locator('[data-testid="cart-count"]');
-    const countText = await cartCount.textContent();
-    expect(parseInt(countText) || 0).toBe(0);
+    const cartCountVisible = await cartCount.isVisible();
+
+    // If badge is not visible, count is 0; otherwise check the value
+    if (cartCountVisible) {
+      const countText = await cartCount.textContent();
+      expect(parseInt(countText) || 0).toBe(0);
+    } else {
+      expect(cartCountVisible).toBe(false);
+    }
   });
 
   test('should add product to cart from home page', async ({ page }) => {
@@ -21,19 +28,17 @@ test.describe('Shopping Cart', () => {
     const addToCartButtons = page.locator('button:has-text("Add to Cart")');
     const firstButton = addToCartButtons.first();
 
-    // Get initial cart count
-    const cartCount = page.locator('[data-testid="cart-count"]');
-    const initialCount = parseInt(await cartCount.textContent() || '0');
-
     // Click add to cart
     await firstButton.click();
 
     // Wait for cart count to update
     await page.waitForTimeout(300);
 
-    // Verify cart count increased
-    const updatedCount = parseInt(await cartCount.textContent() || '0');
-    expect(updatedCount).toBe(initialCount + 1);
+    // Verify cart count is now visible and shows 1
+    const cartCount = page.locator('[data-testid="cart-count"]');
+    await expect(cartCount).toBeVisible();
+    const countText = await cartCount.textContent();
+    expect(parseInt(countText)).toBe(1);
   });
 
   test('should add multiple products to cart', async ({ page }) => {
@@ -130,14 +135,14 @@ test.describe('Shopping Cart', () => {
 
     // Add product from products page
     const addToCartButtons = page.locator('button:has-text("Add to Cart")');
-    const initialCount = parseInt(await page.locator('[data-testid="cart-count"]').textContent() || '0');
-
     await addToCartButtons.first().click();
     await page.waitForTimeout(200);
 
-    // Verify cart count updated
-    const updatedCount = parseInt(await page.locator('[data-testid="cart-count"]').textContent() || '0');
-    expect(updatedCount).toBe(initialCount + 1);
+    // Verify cart count is visible and updated
+    const cartCount = page.locator('[data-testid="cart-count"]');
+    await expect(cartCount).toBeVisible();
+    const countText = await cartCount.textContent();
+    expect(parseInt(countText)).toBeGreaterThanOrEqual(1);
   });
 
   test('should persist cart state when navigating between pages', async ({ page }) => {

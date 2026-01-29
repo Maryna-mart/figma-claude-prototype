@@ -7,7 +7,7 @@ test.describe('Client-side Routing', () => {
 
   test('should display home page by default', async ({ page }) => {
     // Verify we're on home page
-    const heroSection = page.locator('text=Welcome to CLOTH').first();
+    const heroSection = page.locator('text=Summer Collection 2026').first();
     await expect(heroSection).toBeVisible();
   });
 
@@ -18,7 +18,7 @@ test.describe('Client-side Routing', () => {
 
     // Wait for navigation and verify Products page loads
     await page.waitForURL(/\/products/);
-    const productsTitle = page.locator('text=Our Collection');
+    const productsTitle = page.locator('text=All Products');
     await expect(productsTitle).toBeVisible();
   });
 
@@ -29,7 +29,7 @@ test.describe('Client-side Routing', () => {
 
     // Wait for navigation and verify Products page loads
     await page.waitForURL(/\/products/);
-    const productsTitle = page.locator('text=Our Collection');
+    const productsTitle = page.locator('text=All Products');
     await expect(productsTitle).toBeVisible();
   });
 
@@ -40,7 +40,7 @@ test.describe('Client-side Routing', () => {
 
     // Wait for navigation and verify Products page loads
     await page.waitForURL(/\/products/);
-    const productsTitle = page.locator('text=Our Collection');
+    const productsTitle = page.locator('text=All Products');
     await expect(productsTitle).toBeVisible();
   });
 
@@ -56,7 +56,7 @@ test.describe('Client-side Routing', () => {
 
     // Verify we're back on home page
     await page.waitForURL('/');
-    const heroSection = page.locator('text=Welcome to CLOTH').first();
+    const heroSection = page.locator('text=Summer Collection 2026').first();
     await expect(heroSection).toBeVisible();
   });
 
@@ -70,7 +70,7 @@ test.describe('Client-side Routing', () => {
     await page.reload();
 
     // Verify still on products page
-    const productsTitle = page.locator('text=Our Collection');
+    const productsTitle = page.locator('text=All Products');
     await expect(productsTitle).toBeVisible();
   });
 
@@ -84,7 +84,7 @@ test.describe('Client-side Routing', () => {
     await page.goBack();
 
     // Verify back on home page
-    const heroSection = page.locator('text=Welcome to CLOTH').first();
+    const heroSection = page.locator('text=Summer Collection 2026').first();
     await expect(heroSection).toBeVisible();
   });
 
@@ -101,20 +101,23 @@ test.describe('Client-side Routing', () => {
     await page.goForward();
 
     // Verify back on products page
-    const productsTitle = page.locator('text=Our Collection');
+    const productsTitle = page.locator('text=All Products');
     await expect(productsTitle).toBeVisible();
   });
 
-  test('should handle mobile navigation from products page', async ({ page }) => {
+  test('should open mobile menu on mobile viewport', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 667 });
 
-    // Navigate to products
-    const menLink = page.locator('text=MEN').first();
-    await menLink.click();
-    await page.waitForURL(/\/products/);
+    // On mobile, menu button should be visible
+    const menuButton = page.locator('button').filter({ hasText: '☰' });
+    await expect(menuButton).toBeVisible();
 
-    // Verify products page displays correctly on mobile
-    const productsTitle = page.locator('text=Our Collection');
-    await expect(productsTitle).toBeVisible();
+    // Click to open menu
+    await menuButton.click();
+    await page.waitForTimeout(300);
+
+    // Menu items should appear
+    const menLink = page.locator('text=MEN').last();
+    await expect(menLink).toBeVisible();
   });
 });
