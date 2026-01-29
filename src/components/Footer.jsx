@@ -47,8 +47,13 @@ export function Footer() {
 
         {/* Divider */}
         <div className="border-t border-gray-700 pt-8">
-          <p className="text-gray-300 text-sm text-center">
+          <p className="text-gray-300 text-sm text-center mb-3">
             © 2026 CLOTH Store. All rights reserved.
+          </p>
+          <p className="text-gray-400 text-xs text-center">
+            UI Design: <a href="https://www.figma.com/community/file/1365263619600313207/cloth-store-fashion-store-e-commerce-ui-kit" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200 transition-colors">Cloth Store E-commerce UI Kit</a> (Figma Community)
+            <br />
+            Prototype: Built with Claude AI & React
           </p>
         </div>
       </div>
