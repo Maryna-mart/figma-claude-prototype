@@ -10,3 +10,4 @@ export { ProductGrid } from './ProductGrid';
 export { FilterSidebar } from './FilterSidebar';
 export { Breadcrumb } from './Breadcrumb';
 export { Footer } from './Footer';
+export { ErrorBoundary } from './ErrorBoundary';
