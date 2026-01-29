@@ -30,7 +30,7 @@ export function Home() {
         <div className="relative text-center text-white px-4 z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">{heroContent.title}</h1>
           <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">{heroContent.subtitle}</p>
-          <Button variant="accent" size="lg">
+          <Button variant="accent" size="lg" onClick={() => navigate('/products')}>
             {heroContent.ctaText}
           </Button>
         </div>
