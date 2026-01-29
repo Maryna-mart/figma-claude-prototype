@@ -1,0 +1,105 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Primary Colors
+        black: '#000000',
+        white: '#FFFFFF',
+
+        // Neutrals - Grays
+        charcoal: '#5E5E5E',
+        'dark-gray': '#1E1E1E',
+        'medium-gray': '#8A8A8A',
+        'light-gray': '#D9D9D9',
+        'off-white': '#F5F5F5',
+        'very-light-gray': '#DCDCDC',
+        'pale-gray': '#DFDFDF',
+        'almost-white': '#ECECEC',
+
+        // Accent Colors
+        'accent-blue': '#000E8A',
+        'mint-green': '#A6D6CA',
+        'soft-blue': '#B9C1E8',
+        'warm-beige': '#EBE7DB',
+        'pale-beige': '#DBDCCE',
+        'dark-charcoal': '#272727',
+        'very-dark-gray': '#1B1B1D',
+        'accent-red': '#E51515',
+      },
+      spacing: {
+        xs: '4px',
+        sm: '8px',
+        md: '12px',
+        lg: '16px',
+        xl: '24px',
+        '2xl': '32px',
+        '3xl': '48px',
+        '4xl': '64px',
+        '5xl': '80px',
+        '6xl': '96px',
+      },
+      fontSize: {
+        xs: '10px',
+        sm: '12px',
+        base: '14px',
+        lg: '16px',
+        xl: '18px',
+        '2xl': '20px',
+        '3xl': '24px',
+        '4xl': '28px',
+        '5xl': '32px',
+        '6xl': '40px',
+        '7xl': '48px',
+      },
+      fontWeight: {
+        light: 300,
+        normal: 400,
+        semibold: 600,
+        bold: 700,
+      },
+      borderRadius: {
+        sm: '4px',
+        base: '6px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+      },
+      boxShadow: {
+        xs: '0 1px 2px rgba(0, 0, 0, 0.05)',
+        sm: '0 1px 3px rgba(0, 0, 0, 0.1)',
+        base: '0 4px 6px rgba(0, 0, 0, 0.07)',
+        md: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        lg: '0 10px 15px rgba(0, 0, 0, 0.1)',
+        xl: '0 20px 25px rgba(0, 0, 0, 0.1)',
+        '2xl': '0 25px 50px rgba(0, 0, 0, 0.25)',
+        inner: 'inset 0 2px 4px rgba(0, 0, 0, 0.06)',
+      },
+      transitionDuration: {
+        fast: '150ms',
+        base: '200ms',
+        slow: '300ms',
+        slower: '500ms',
+      },
+      transitionTimingFunction: {
+        ease: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'ease-in': 'cubic-bezier(0.42, 0, 1, 1)',
+        'ease-out': 'cubic-bezier(0, 0, 0.58, 1)',
+        'ease-in-out': 'cubic-bezier(0.42, 0, 0.58, 1)',
+      },
+      screens: {
+        xs: '320px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+      },
+    },
+  },
+  plugins: [],
+}

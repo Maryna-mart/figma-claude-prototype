@@ -23,6 +23,9 @@ build/
 .env.local
 .env.*.local
 
+# MCP Configuration with sensitive tokens
+.mcp.json
+
 # OS
 .DS_Store
 .AppleDouble
