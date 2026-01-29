@@ -1,6 +1,3 @@
-// Placeholder image URLs - using placeholder service
-const PLACEHOLDER_IMG = (id) => `https://images.unsplash.com/photo-${1542272604827 + id}?w=500&h=500&fit=crop`;
-
 export const products = [
   {
     id: 1,
@@ -17,7 +14,7 @@ export const products = [
     name: 'Premium Denim Jeans',
     price: 79.99,
     originalPrice: 99.99,
-    image: 'https://images.unsplash.com/photo-1542272604827-c51cf435d649?w=500&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1542272604827-7e9a57e35e35?w=500&h=500&fit=crop',
     badge: 'SALE',
     availability: true,
     category: 'men',
@@ -37,7 +34,7 @@ export const products = [
     name: 'Navy Polo Shirt',
     price: 49.99,
     originalPrice: 59.99,
-    image: 'https://images.unsplash.com/photo-1541001121265-d675dccb6a24?w=500&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=500&h=500&fit=crop',
     badge: null,
     availability: false,
     category: 'men',
@@ -97,7 +94,7 @@ export const products = [
     name: 'Kids Denim Jacket',
     price: 44.99,
     originalPrice: 54.99,
-    image: 'https://images.unsplash.com/photo-1503342564132-7b5f3c2f01b0?w=500&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1503449377149-cb7f55dc2b77?w=500&h=500&fit=crop',
     badge: null,
     availability: true,
     category: 'kids',
@@ -117,7 +114,7 @@ export const products = [
     name: 'Kids Shorts',
     price: 24.99,
     originalPrice: null,
-    image: 'https://images.unsplash.com/photo-1503342564132-7b5f3c2f01b0?w=500&h=500&fit=crop',
+    image: 'https://images.unsplash.com/photo-1467883033797-69d440ba1578?w=500&h=500&fit=crop',
     badge: null,
     availability: false,
     category: 'kids',
