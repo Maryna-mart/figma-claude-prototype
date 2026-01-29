@@ -5,7 +5,7 @@ import { Products } from './pages/Products';
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/figma-claude-prototype">
       <CartProvider>
         <Routes>
           <Route path="/" element={<Home />} />
